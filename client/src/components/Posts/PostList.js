@@ -9,13 +9,15 @@ import { postsURL } from '../../constants';
 const PostList = () => {
   const [posts, setPosts] = useState({});
 
+  const URL = `${postsURL}/posts`;
+
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get(postsURL);
+      const res = await axios.get(URL);
       setPosts(res.data);
     };
     fetchPosts();
-  }, []);
+  }, [URL]);
 
   const renderedPosts = Object.values(posts).map((post) => {
     return (

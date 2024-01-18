@@ -7,10 +7,12 @@ import { commentsURL } from '../../constants';
 const CommentsCreate = ({ postId }) => {
   const [content, setContent] = useState('');
 
+  const URL = `${commentsURL}/posts/${postId}/comments`;
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    await axios.post(`${commentsURL}/${postId}/comments`, {
+    await axios.post(URL, {
       content,
     });
 

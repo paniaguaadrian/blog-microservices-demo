@@ -6,10 +6,12 @@ import { postsURL } from '../../constants';
 const PostCreate = () => {
   const [title, setTitle] = useState('');
 
+  const URL = `${postsURL}/posts`;
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    await axios.post(postsURL, {
+    await axios.post(URL, {
       title,
     });
 
