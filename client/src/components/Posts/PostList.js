@@ -4,12 +4,12 @@ import axios from 'axios';
 import CommentsCreate from '../Comments/CommentsCreate';
 import CommentsList from '../Comments/CommentsList';
 
-import { postsURL } from '../../constants';
+import { queryURL } from '../../constants';
 
 const PostList = () => {
   const [posts, setPosts] = useState({});
 
-  const URL = `${postsURL}/posts`;
+  const URL = `${queryURL}/posts`;
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -28,7 +28,7 @@ const PostList = () => {
       >
         <div className="card-body">
           <h3>{post.title}</h3>
-          <CommentsList postId={post.id} />
+          <CommentsList comments={post.comments} />
           <CommentsCreate postId={post.id} />
         </div>
       </div>
