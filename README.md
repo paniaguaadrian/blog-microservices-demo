@@ -21,6 +21,12 @@ The cool idea about this is that now our client will receive the posts and comme
 
 The best thing about this query service is that now we can kill or lose the posts and comments services, and we will still have access to the data of the posts thanks to the query service who has it.
 
+#### Commit #4
+
+I will add a new service called moderation. Moderation will take the comments and moderate the content. If that comment contains the word X, will hide/stop it.
+
+It will have 3 states: Comment awaiting moderation, comment is correct, comment is rejected. I've added a new flag to the comment structure called status.
+
 ## Endpoints
 
 - @GET /posts -> returns a list of posts
